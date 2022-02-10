@@ -1,0 +1,22 @@
+<h1>Welcome to the ENTR 451 Casino!</h1>
+
+<%
+    ranks = [2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King", "Ace"]
+    suits = ["clubs", "diamonds", "hearts", "spades"]
+    
+    #create a deck of cards
+    deck = []
+    for rank in ranks
+        for suit in suits
+            #create card from rank and suit
+            card = "#{rank}_of_#{suit}"
+            deck.push(card)
+        end
+    end 
+    shuffled_deck = deck.shuffle
+    hand = shuffled_deck[0,5]
+%>
+
+<% for card in hand %>
+    <img src= "images/cards/<%= card %>.svg">
+<% end %>
